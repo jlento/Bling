@@ -36,6 +36,7 @@ bling.ui.loadText = function (fileName, elementId) {
         reader.readAsText(fileName);
         bling.ui.htmlConvert();
     }
+    // TODO: Do better. (Needed for reloading the same file)
     document.getElementById('blingLoadMarkdownInput').value = '';
 };
 
@@ -60,13 +61,16 @@ bling.ui.mdSave = function () {
 
 
 bling.ui.pdfPrint = function () {
-    const body = document.body.innerHTML,
-          text = document.getElementById('blingMarkdown').value,
-          html = document.getElementById('blingHtml').innerHTML;
+    const body  = document.body.innerHTML,
+          style = document.getElementById('blingToolbar').children[1].value,
+          text  = document.getElementById('blingMarkdown').value,
+          html  = document.getElementById('blingHtml').innerHTML;
     document.body.innerHTML = html;
     window.print();
     document.body.innerHTML = body;
+    // TODO: Do better. (innerHTML loses the html element values...)
     document.getElementById('blingMarkdown').value = text;
+    document.getElementById('blingToolbar').children[1].value = style;
 }
 
 bling.ui.styleSet = function (style) {
@@ -82,13 +86,10 @@ bling.ui.styleSet = function (style) {
     newjs.src = 'styles/' + style + '.js';
     parent.removeChild(oldjs);
     parent.appendChild(newjs);
+    // TODO: Boiler plate from the individual styles should be moved here
 };
 
-
-
-
-
-
+// TODO: Write this. (Currently not much more than a placeholder)
 function splitToPages (html, pageHeight) {
     var topLevelElements = Array.from(html.childNodes);
     var h = 0;
