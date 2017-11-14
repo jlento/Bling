@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    margin: 0px;
+    font-family: Arial;
+}
+
+#blingToolbar {
+    overflow: hidden;
+    font-family: Arial;
+    padding: 3px 3px 0px 3px;
+}
+
+#blingPreview {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    padding: 3px;
+}
+
+#blingMarkdown, #blingHtml {
+    flex: auto;
+    display: block;
+    width: 50%;
+    resize: none;
+    outline: none;
+    padding: 2px;
+    border: 1px solid gray;
+    overflow-y: scroll;
+}
