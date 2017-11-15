@@ -1,4 +1,15 @@
-var bling = { 'ui': {}, 'style': {} };
+var bling = {
+    'ui': {},
+    'style': {
+        'css' : {
+            'url' : 'styles/plain/plain.css'
+        },
+        'js' : {
+            'url' : 'styles/plain/plain.js'
+        }
+    },
+    'converter' : new showdown.Converter()
+};
 
 bling.ui.htmlAutoConvert = function () {
     // TODO: Only convert when user pauses typing
@@ -75,19 +86,28 @@ bling.ui.pdfPrint = function () {
 
 bling.ui.styleSet = function (style) {
 
-    document.getElementById('blingCss')
-        .setAttribute('href','styles/' + style + '/' + style + '.css');
-
     var parent = document.getElementById('blingJs').parentNode;
     var oldjs = document.getElementById('blingJs');
     var newjs = document.createElement('script');
     newjs.id = 'blingJs';
     newjs.type= 'text/javascript';
     newjs.src = 'styles/' + style + '/' + style + '.js';
+    newjs.onload = function () {bling.style.update();};
     parent.removeChild(oldjs);
     parent.appendChild(newjs);
-    // TODO: Boiler plate from the individual styles should be moved here
 };
+
+bling.style.update = function () {
+    console.log('Loading ' + bling.style.css.url);
+    document.getElementById('blingCss')
+        .setAttribute('href', bling.style.css.url);
+    console.log('Loading ' + bling.style.js.url);
+    showdown.extension(bling.style.name, bling.style.extension);
+    showdown.setOption('extensions', [bling.style.name]);
+    bling.converter = new showdown.Converter();
+    bling.ui.htmlConvert();
+};
+
 
 // TODO: Write this. (Currently not much more than a placeholder)
 function splitToPages (html, pageHeight) {
