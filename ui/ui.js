@@ -76,14 +76,14 @@ bling.ui.pdfPrint = function () {
 bling.ui.styleSet = function (style) {
 
     document.getElementById('blingCss')
-        .setAttribute('href','styles/' + style + '.css');
+        .setAttribute('href','styles/' + style + '/' + style + '.css');
 
     var parent = document.getElementById('blingJs').parentNode;
     var oldjs = document.getElementById('blingJs');
     var newjs = document.createElement('script');
     newjs.id = 'blingJs';
     newjs.type= 'text/javascript';
-    newjs.src = 'styles/' + style + '.js';
+    newjs.src = 'styles/' + style + '/' + style + '.js';
     parent.removeChild(oldjs);
     parent.appendChild(newjs);
     // TODO: Boiler plate from the individual styles should be moved here

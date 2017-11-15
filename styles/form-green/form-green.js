@@ -4,9 +4,9 @@ bling.style.extension = {
   replace: 'NIMI'
 };
 
-console.log('Loaded istod.js');
-showdown.extension('istod', bling.style.extension);
+console.log('Loaded form-green.js');
+showdown.extension('form-green', bling.style.extension);
 showdown.setOption('tables', true);
-showdown.setOption('extensions', ['istod']);
+showdown.setOption('extensions', ['form-green']);
 bling.converter = new showdown.Converter();
 bling.ui.htmlConvert();
