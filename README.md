@@ -10,7 +10,8 @@ Proof of concept. The following kind of works:
 
 - Conversion from markdown to html
 - Loading markdown from local file to editor
-- Loading Bling Style (arbitrary JS, currently set snow) from local file
+- Loading Bling Style from local file (arbitrary JS, `form-green.js` example
+  sets showdown extension and loads custom CSS)
 - Saving edited markdown
 - Printing PDF
 - Changing style, i.e. CSS and snowdown extension, works. Rudimentary pager works.
