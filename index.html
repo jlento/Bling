@@ -3,35 +3,36 @@
 
     <head>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="ui/ui.css" />
-        <link id="blingCss" rel="stylesheet" href="styles/plain/plain.css" />
+        <link rel="stylesheet" href="css/bling.css">
+        <style id="paper">
+            html, body {
+                margin: 0mm;
+            }
+        </style>
     </head>
 
     <body>
 
         <div id="blingToolbar">
-            <select onchange="bling.ui[this.options[this.selectedIndex].value]();
-                              this.selectedIndex=0;">
+            <select id="blingFileMenu"
+                    onchange="bling.editor[this.value]();this.selectedIndex=0;">
                 <option selected disabled hidden>File</option>
-                <option value="mdLoad">Load Markdown</option>
-                <option value="mdSave">Save Markdown</option>
-                <option value="pdfPrint">Print PDF</option>
-            </select>
-            <select title="Select Style"
-                    onchange="bling.ui.styleSet(this.options[this.selectedIndex].value)">
-                <option value="plain" selected>Bling: Plain</option>
-                <option value="form-green">Bling: Isännöitsijäntodistus</option>
+                <option value="loadMarkdown">Load Markdown</option>
+                <option value="loadStyleJs">Load Style JS</option>
+                <option value="printPdf">Print PDF</option>
+                <option value="saveMarkdown">Save Markdown</option>
+                <option value="saveHtml">Save HTML</option>
+                <option value="clearStyle">Clear Style</option>
             </select>
         </div>
 
         <div id="blingPreview">
-            <textarea id="blingMarkdown" type="text" oninput="bling.ui.htmlAutoConvert()"></textarea>
+            <textarea id="blingMarkdown" oninput="bling.editor.autoConvert()"></textarea>
             <div id="blingHtml"></div>
         </div>
 
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.8.1/dist/showdown.min.js"></script>
-        <script src="ui/ui.js"></script>
-        <script id="blingJs" src="styles/plain/plain.js"></script>
-
+        <script src="src/bling.js"></script>
+        <script id="blingStyleJs"></script>
     </body>
 </html>

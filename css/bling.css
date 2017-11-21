@@ -5,20 +5,17 @@ body {
     margin: 0px;
     font-family: Arial;
 }
-
 #blingToolbar {
     overflow: hidden;
-    font-family: Arial;
+    font-size: 12px;
     padding: 3px 3px 0px 3px;
 }
-
 #blingPreview {
     display: flex;
     flex: 1;
     justify-content: space-evenly;
     padding: 3px;
 }
-
 #blingMarkdown, #blingHtml {
     flex: auto;
     display: block;
@@ -28,4 +25,27 @@ body {
     padding: 2px;
     border: 1px solid gray;
     overflow-y: scroll;
+}
+
+@media print {
+    body, #blingPreview {
+        display: block;
+    }
+    #blingToolbar, #blingMarkdown {
+        display: none;
+    }
+    #blingHtml {
+        width: 100%;
+        overflow: hidden;
+        border: 0px;
+    }
+    h1, h2, h3, h4, h5 {
+        page-break-after: newer;
+    }
+    div.pageBreak {
+        page-break-after: always;
+    }
+    div.pageBreak hr {
+        display: none;
+    }
 }

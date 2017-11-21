@@ -1,7 +1,7 @@
-bling.style.name = 'form-green';
-bling.style.css.url = 'styles/form-green/form-green.css'
-bling.style.extension = {
+bling.style.setCss('styles/form-green/form-green.css');
+bling.style.setExtension({
     type: 'lang',
-    regex: /nimi/g,
-    replace: 'NIMI'
-};
+    regex : /^ *$\n^==* *$\n^ *$/mg,
+    replace : '<div class="pageBreak"><hr></div>'
+});
+
