@@ -42,7 +42,8 @@ body {
     h1, h2, h3, h4, h5 {
         page-break-after: newer;
     }
-    div.pageBreak {
+    div.page {
+        margin-top: 5%;
         page-break-after: always;
     }
     div.pageBreak hr {
