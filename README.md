@@ -14,7 +14,7 @@ Proof of concept. The following kind of works:
   sets showdown extension and loads custom CSS)
 - Saving edited markdown
 - Printing PDF
-- Changing style, i.e. CSS and snowdown extension, works. Rudimentary pager works.
+- Rudimentary pager
 
 ## Requirements
 
