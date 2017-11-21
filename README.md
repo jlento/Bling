@@ -30,10 +30,12 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 
 ## Additional markdown
 
+- Three or more equal signs `===` at the beginning of a line surrounded by empty
+  lines inserts a page break
+
 ## TODO
 
 - lot's of cleaning, of course...
-- Three or more equal signs `===` inserts a page break
 - plus all stuff in the source TODO comments...
 
 ## Known limitations
