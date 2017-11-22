@@ -26,6 +26,9 @@ body {
     border: 1px solid gray;
     overflow-y: scroll;
 }
+#blingMarkdown {
+    font-size: 12px;
+}
 
 @media print {
     body, #blingPreview {
@@ -39,14 +42,3 @@ body {
         overflow: hidden;
         border: 0px;
     }
-    h1, h2, h3, h4, h5 {
-        page-break-after: newer;
-    }
-    div.page {
-        margin-top: 5%;
-        page-break-after: always;
-    }
-    div.pageBreak hr {
-        display: none;
-    }
-}

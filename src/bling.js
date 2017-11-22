@@ -70,6 +70,8 @@ var bling = function () {
         pageDivs.push(new PageDiv());
         currentPage = pageDivs[pageDivs.length - 1];
 
+        // A block consists of nodes which should be on the same page
+        var block = {nodes : [], breakAfter : false, h : 0, t : 0, b : 0};
         for (var node of nodes)  {
             if (node.nodeType === Node.TEXT_NODE) {
                 continue;
@@ -84,24 +86,41 @@ var bling = function () {
                 window.getComputedStyle(node).getPropertyValue('margin-top'));
             node.bottomMargin = parseInt(
                 window.getComputedStyle(node).getPropertyValue('margin-bottom'));
-            if (node.height + node.topMargin + node.bottomMargin > page.textHeight) {
-                console.warn(`Element height exeeds page height`);
+
+            block.nodes.push(node);
+            block.breakAfter = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
+                .indexOf(node.nodeName) > -1 ? false : true;
+            block.h += node.height + Math.max(block.b, node.topMargin);
+            block.b = node.bottomMargin;
+            if (block.nodes.length == 1) {block.t = node.topMargin;};
+
+            console.log(node.nodeName, block.nodes.length, block.nodes, block.breakAfter, block.h, block.t, block.b, currentPage.h, currentPage.m, page.height);
+
+            if (block.h + block.m > page.textHeight) {
+                console.warn(`Block height exeeds page height`);
                 if (currentPage.firstChild) {
                     pageDivs.push(new PageDiv());
                     currentPage = pageDivs[pageDivs.length - 1];
                 }
-                currentPage.appendChild(node);
+                block.nodes.forEach(node => currentPage.appendChild(node));
+                block = {nodes : [], breakAfter : false, h : 0, t : 0, b : 0};
                 pageDivs.push(new PageDiv());
                 currentPage = pageDivs[pageDivs.length - 1];
                 continue;
             };
-            if (currentPage.h + Math.max(currentPage.m,node.topMargin) + node.height + node.bottomMargin > page.height) {
+            console.log(':' + (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b) + ':' + page.height);
+            if (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b > page.height) {
+                console.log('New page.')
                 pageDivs.push(new PageDiv());
                 currentPage = pageDivs[pageDivs.length - 1];
             };
-            currentPage.appendChild(node);
-            currentPage.h += Math.max(currentPage.m,node.topMargin) + node.height;
-            currentPage.m = node.bottomMargin;
+            if (block.breakAfter || node == nodes[nodes.length - 1]) {
+                console.log('Attaching block to currentPage')
+                block.nodes.forEach(node => currentPage.appendChild(node));
+                currentPage.h += Math.max(currentPage.m, block.t) + block.h;
+                currentPage.m = block.b;
+                block = {nodes : [], breakAfter : false, h : 0, t : 0, b : 0};
+            }
         };
 
         /*
@@ -172,10 +191,10 @@ var bling = function () {
 @media print {
     html, body {
         margin: 0mm;
+        font-size: ${paper.fontSize}pt;
     }
 
     #blingHtml {
-        font-size: ${paper.fontSize}pt;
         margin-top: ${paper.marginFraction * paper.width}mm;
         margin-left: ${paper.marginFraction * paper.width}mm;;
         padding: 0px;
@@ -185,12 +204,14 @@ var bling = function () {
 }
 
 @media screen {
+    html {
+        font-size: ${page.fontSize}px;
+    }
     .page {
         border: 1px dashed gray;
         padding: ${page.padding}px;
         width: ${page.textWidth}px;
         height: ${page.textHeight}px;
-        font-size: ${page.fontSize}px;
     }
 }
 `;

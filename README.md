@@ -15,6 +15,8 @@ Proof of concept. The following kind of works:
 - Saving edited markdown
 - Printing PDF
 - Rudimentary pager
+    - page breaks between top level elements, only 
+    - does not break page after headings
 
 ## Requirements
 
@@ -32,6 +34,12 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 
 - Three or more equal signs `===` at the beginning of a line surrounded by empty
   lines inserts a page break
+
+## Writing new styles
+
+- Use `rem` units for font sizes in CSS. That should match the font-sizes in
+  both screen (scalable) and on PDF. One `rem` unit corresponds to 12pt on
+  print.
 
 ## TODO
 
