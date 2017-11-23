@@ -44,6 +44,9 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 ## TODO
 
 - lot's of cleaning, of course...
+- rewrite...
+- headers and footers
+- page numbering
 - plus all stuff in the source TODO comments...
 
 ## Known limitations
