@@ -28,8 +28,15 @@ var bling = function () {
         var text      = document.getElementById('blingMarkdown').value,
             target    = document.getElementById('blingHtml'),
             pos       = target.scrollTop,
-            html      = converter.makeHtml(text);
-        target.innerHTML = html;
+            html      = converter.makeHtml(text),
+            longpage  = document.createElement('div');
+        longpage.className = 'page';
+        longpage.style = 'height: auto;';
+        while (target.firstChild) {
+            target.removeChild(target.firstChild);
+        };
+        target.appendChild(longpage);
+        target.firstChild.innerHTML = html;
         paginate(page, target);
         target.scrollTop = pos;
     }
@@ -56,7 +63,7 @@ var bling = function () {
     }
 
     function paginate (page, container) {
-        var nodes = Array.from(container.childNodes) || [],
+        var nodes = Array.from(container.firstChild.childNodes) || [],
             pageDivs = [], currentPage = undefined;
 
         function PageDiv () {
@@ -66,6 +73,7 @@ var bling = function () {
             pageDiv.m = 0;
             return pageDiv;
         }
+
 
         pageDivs.push(new PageDiv());
         currentPage = pageDivs[pageDivs.length - 1];
@@ -94,8 +102,10 @@ var bling = function () {
             block.b = node.bottomMargin;
             if (block.nodes.length == 1) {block.t = node.topMargin;};
 
-            console.log(node.nodeName, block.nodes.length, block.nodes, block.breakAfter, block.h, block.t, block.b, currentPage.h, currentPage.m, page.height);
+            //console.log(node.nodeName, block.nodes.length, block.nodes, block.breakAfter, block.h, block.t, block.b, currentPage.h, currentPage.m, page.height);
 
+            console.log(node.offsetWidth);
+            console.log(node.getBoundingClientRect().width);
             if (block.h + block.m > page.textHeight) {
                 console.warn(`Block height exeeds page height`);
                 if (currentPage.firstChild) {
@@ -129,6 +139,7 @@ var bling = function () {
         };
          */
 
+        container.removeChild(container.firstChild);
         for (node of pageDivs) {
             container.appendChild(node);
         };
