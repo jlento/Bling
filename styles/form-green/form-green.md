@@ -100,7 +100,7 @@ sekä osakkaan oikeudet muutostöihin
 
         -
     
-YHTIÖN KIINTEISTÖT JA RAKENNUKSET
+§5 YHTIÖN KIINTEISTÖT JA RAKENNUKSET
 --------------------------------
 
 - 1\. Kiinteistötunnus (kunta, kaupunginosa/kylä,\

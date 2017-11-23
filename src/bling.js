@@ -195,11 +195,15 @@ var bling = function () {
     }
 
     #blingHtml {
+        margin-top: 0px;
+    }
+    .page {
         margin-top: ${paper.marginFraction * paper.width}mm;
         margin-left: ${paper.marginFraction * paper.width}mm;;
-        padding: 0px;
         width: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
         height: ${paper.height - 2.0 * paper.MarginFraction * paper.width}mm;
+        padding: 0px;
+        page-break-after: always;
     }
 }
 
