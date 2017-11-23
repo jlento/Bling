@@ -1,83 +1,134 @@
 ISÄNNÖITSIJÄNTODISTUS
-==========================
+=====================
 
-TODISTUKSEN KOHDE
----------------------
+§3 TODISTUKSEN KOHDE
+--------------------
 
-- Yhtiön nimi
+- 1\. Yhtiön nimi, yritys- ja yhteisötunnus   
+  ja rekisteröintipäivä
 
-        XXXXXXXXXXXX
-
-- Huoneisto
-
-        XX
-
-- Osakkeet
-
-        XX-XX
-
-- Kiinteistön osoite
+        As Oy XXXXXXXXXXX X
+        XXXXXXX-X
+        DD.MM.YYYY/XXX.XXX
+        
+- 2\. Kiinteistön sijaintipaikan osoite
 
         XXXXXXXXXXX XX XXX
         XXXXX XXXXXXXXXX
 
-HUONEISTON TIEDOT
+- 3\. Osakkeiden numerot, lukumäärä   
+  ja huoneiston tunnus
+
+        XX-XX, Xkpl, Asunto XX
+
+- 4\. Isännöitsijän tai hallituksen puheejohtajan nimi ja osoite
+
+        XXXXXXX XXXXXXXXX
+        XXXXXXXXXX X X X
+        XXXXX XXXXXXXXX
+
+§4 TIEDOT OSAKEHUONEISTOSTA
 ---------------------
 
-- Huoneiston yhtiöjärjestyksen mukainen\
-  käyttötarkoitus
+- 1\. Huoneiston käyttötarkoitus
 
-        XXXXXXXXXXXXXXXXXX
+        Asuinhuoneisto
+        puolisoiden yhteisenä kotina
 
-- Huoneiston pinta-ala
+- 2\. Huoneiston pinta-ala
 
         Yhtiöjärjestyksen mukainen XX m2
         Tarkistusmitattu XX m2
 
-- Kerros
-
-        X
-
-- Huoneistotyyppi
+- 3\. Huoneiden lukumäärä
 
         Xh + k
 
-- Muut tilat joihin hallintaoikeus
+- 4\. Muut tilat joihin hallintaoikeus, esim. varastotilat, autopaikka
+  tai piha-alue, hallinan peruste, pinta-ala ja sijainti
 
-        XXXXXXXXXXXXXXXX
+        Käyttöullakko
+        Kellarivarasto
 
-- Osakeluetteloon merkityt omistajat, osuus ja merkintäpäivä
+- 5\. Osakeluetteloon merkityt omistajat, osuus ja merkintäpäivä
 
         XXXX XXXXXXX, XX%, XX.XX.XXXX
         XXXX XXXXXXX, XX%, XX.XX.XXXX
 
-- Käyttö puolisoiden\
-     yhteisenä kotina
+- 6\. Yhtiöjärjestyksen mukainen lunastusoikeus osakkeisiin, tai muut   
+  osakkeisiin kohdistvat luovutus-, hallinta- tai käyttörajoitukset
 
-        Kyllä/Ei
+        Lunastusoikeus osakkailla
 
-- Yhtiöjärjestyksen mukainen lunastusoikeus osakkeisiin
+- 7\. Osakehuoneisto yhtiön hallinnassa, hallinnan kestoaika,   
+  osakehuoneisto yhtiön toimesta vuokrattu
+   
+        -
 
-        Osakkailla/Jollain muulla
-
-- Vastikkeet ja vastikeperusteet (vastike; peruste; €/vastikeperuste)
+- 8\. Vastikkeet ja vastikeperusteet (vastike; peruste; €/vastikeperuste)
 
         Hoitovastike; XXX,XX €/kk; XX m2; X,X €/m2
 
-- Huoneistoon kohdistuvat lainaosuudet
+- 9\. Yhtiölle suoritettavat muut maksut
 
         -
 
-- Osakkeenomistajan vastikevelka
+- 10\. Yhtiö hakeutunut arvonlisäverovelvolliseksi
+  huoneiston osalta
+    
+        -
+
+- 11\. Huoneistoon kohdistuvat lainaosuudet
 
         -
 
-- Lisätietoja Huoneistosta
+- 12\. Osakkeenomistajan vastikevelka
+
+        -
+
+- 13\. Osakehuoneiston käytön tai käyttökustannusten kannalta\
+olennaiset viat ja puutteet
+
+        -
+
+- 14\. Osakehuoneiston kunnossapito ja muutostyöt
+
+        -
+
+- 15\. Osakkaan ja yhtiön kunnossapitovastuut,\
+sekä osakkaan oikeudet muutostöihin
 
         -
     
-YHTIÖN TIEDOT
-----------------
+YHTIÖN KIINTEISTÖT JA RAKENNUKSET
+--------------------------------
+
+- 1\. Kiinteistötunnus (kunta, kaupunginosa/kylä,\
+   kortteli, tontti/tila), tontin pinta-ala 
+
+        XXX-XXX-XXXX-XXXX-X
+        XXXXXXXXX, XXXXXXXXX XX, XXX, X
+        XXX m2
+
+- 2\. Hallintaperuste ja lunastusoikeus
+
+        Vuokrasopimus
+        
+- 3\. Vuokranantaja, vuorasopimuksen päättymispäivä, vuosivuokra,\
+  tarkistusperuste, mahdollinen yhtiön tai osakkaan lunastusoikeus,\
+  osakkaisen vastuu vuokran maksamisesta
+
+        Helsingin Kaupunki; 2020; XXXX,XX €
+
+- 4\. Rakennusten lukumäärä, käyttöönottovuosi, talotyyppi, pääasiallinen\
+   rakennusaine, kattotyyppi, kate, lämmitys-, jäähdytys-, ilmanvaihto-\
+   ja tietoliikennejärjestelmät, hissit
+   
+- 5\. rakennusten kerrosala, tilavuus sekä kerrosten ja\
+  porrashuoneiden lukumäärä
+
+
+
 
 - Yhtiön nimi ja osoite
 
@@ -92,17 +143,8 @@ YHTIÖN TIEDOT
 - Kaupparekisterimerkinnän päivämäärä\
   ja reknro
 
-    DD.MM.YYYY/XXX.XXX
+        DD.MM.YYYY/XXX.XXX
 
-- Kiinteistötunnus (kunta, kaupunginosa/kylä,\
-  kortteli, tontti/tila)
-
-        XXX-XXX-XXXX-XXXX-X
-        XXXXXXXXX, XXXXXXXXX XX, XXX, X
-
-- Tontin pinta-ala
-
-        XXX m2
 
 - Käyttämätön rakennusoikeus
 
@@ -122,7 +164,7 @@ YHTIÖN TIEDOT
 
 - Tontin vuosivuokra
 
-        XXXX,XX €
+
 
 - Vuokrantarkistusperuste
 
@@ -242,6 +284,9 @@ TODISTUKSEN TILAAJA JA ANTAJA
         XXXX XXXXXX                   XXXX XXXXXX
         XXXXXXXXXXXX XX XX            XXXXXXXXXXXX XX XX
         XXXXX XXXXXXXXXXXXXX          XXXXX XXXXXXXXXXXXXX
+
+- Laadittu ohjeen "Valtioneuvoston asetus osakehuoneistojen pinta-alan\
+  mittaustavasta ja isännöitsijäntodistuksesta, 12.5.2010/365" mukaan
 
 LIITTEET
 ----------
