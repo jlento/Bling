@@ -148,10 +148,10 @@ var bling = function () {
                     delay(callback, 500);
                 };
                 reader.readAsText(file);
-                document.body.removeChild(input);
+                document.getElementById('blingToolbar').removeChild(input);
             }
         };
-        document.body.appendChild(input);
+        document.getElementById('blingToolbar').appendChild(input);
         input.click();
     }
 
