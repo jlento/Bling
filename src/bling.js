@@ -233,7 +233,10 @@ var bling = function () {
     }
 
     updatePaperStyle();
-    window.addEventListener('resize', () => updatePaperStyle());
+    window.addEventListener('resize', function () {
+        updatePaperStyle();
+        convert();
+    });
 
     return {
         editor : {
