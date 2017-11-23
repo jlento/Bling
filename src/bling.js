@@ -109,7 +109,7 @@ var bling = function () {
                 continue;
             };
             console.log(':' + (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b) + ':' + page.height);
-            if (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b > page.height) {
+            if (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b > page.textHeight) {
                 console.log('New page.')
                 pageDivs.push(new PageDiv());
                 currentPage = pageDivs[pageDivs.length - 1];
