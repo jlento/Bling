@@ -4,31 +4,33 @@
     <head>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="css/bling.css">
-        <style id="paper">
-            html, body {
-                margin: 0mm;
-            }
-        </style>
     </head>
 
     <body>
 
-        <div id="blingToolbar">
-            <select id="blingFileMenu"
-                    onchange="bling.editor[this.value]();this.selectedIndex=0;">
-                <option selected disabled>File</option>
-                <option value="loadMarkdown">Load Markdown</option>
-                <option value="loadStyleJs">Load Style JS</option>
-                <option value="printPdf">Print PDF</option>
-                <option value="saveMarkdown">Save Markdown</option>
-                <option value="saveHtml">Save HTML</option>
-                <option value="clearStyle">Clear Style</option>
+        <nav id="toolbar">
+            <button onClick="this.firstElementChild.click()">
+                Load Markdown
+                <input type="file" accept=".md" onchange="bling.loadMarkdown(this)">
+            </button>
+            <button onClick="this.firstElementChild.click()">
+                Load Style
+                <input type="file" accept=".js" onchange="bling.loadStyleJs(this)">
+            </button>
+            <button onClick="bling.printPdf()">
+                Print PDF
+            </button>
+            <button onClick="bling.saveMarkdown()">
+                Save Markdown
+            </button>
+            <select id="paperSelect" onchange="bling.setPaper(this)">
+                <option value="a4landscape" selected>A4 Landscape</option>
             </select>
-        </div>
+        </nav>
 
-        <div id="blingPreview">
-            <textarea id="blingMarkdown" oninput="bling.editor.autoConvert()"></textarea>
-            <div id="blingHtml"></div>
+        <div id="content">
+            <textarea id="markdown" oninput="bling.autoConvert()"></textarea>
+            <div id="preview"></div>
         </div>
 
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.8.1/dist/showdown.min.js"></script>

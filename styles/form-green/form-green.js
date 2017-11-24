@@ -1,5 +1,5 @@
-bling.style.setCss('styles/form-green/form-green.css');
-bling.style.setExtension([
+bling.setCss('styles/form-green/form-green.css');
+bling.setExtension([
     {
         type: 'output',
         regex : /<\/[hH]1>/,
