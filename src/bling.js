@@ -1,7 +1,7 @@
     var papers = {
         a4landscape: {
             name : 'A4 portrait',
-            width : 8.26 * 25.4,
+            width : 210,
             height : 297,
             fontSize : 12,
             fontsPerWidth: (210.0 / 4.233333333),
@@ -52,6 +52,9 @@
             border = 1,
             width = containerChildWidth,
             height = paper.height / paper.width * width;
+        console.log(`Aspect ratio: PAPER: ${paper.width/paper.height} PAGE: ${width/height}`);
+        console.log(`Text aspect ratio: PAPER: ${((1.0 - 2.0 * paper.marginFraction) * paper.width)/(paper.height- 2.0 * paper.marginFraction * paper.width)} PAGE: ${((1.0 - 2.0 * paper.marginFraction) * width)/(height - 2.0 * paper.marginFraction * width)}`);
+
         return {
             border : border,
             width : width,
@@ -103,10 +106,6 @@
             block.b = node.bottomMargin;
             if (block.nodes.length == 1) {block.t = node.topMargin;};
 
-            //console.log(node.nodeName, block.nodes.length, block.nodes, block.breakAfter, block.h, block.t, block.b, currentPage.h, currentPage.m, page.height);
-
-            console.log(node.offsetWidth);
-            console.log(node.getBoundingClientRect().width);
             if (block.h + block.m > page.textHeight) {
                 console.warn(`Block height exeeds page height`);
                 if (currentPage.firstChild) {
@@ -119,14 +118,11 @@
                 currentPage = pageDivs[pageDivs.length - 1];
                 continue;
             };
-            console.log(':' + (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b) + ':' + page.height);
             if (currentPage.h + Math.max(currentPage.m, block.t) + block.h + block.b > page.textHeight) {
-                console.log('New page.')
                 pageDivs.push(new PageDiv());
                 currentPage = pageDivs[pageDivs.length - 1];
             };
             if (block.breakAfter || node == nodes[nodes.length - 1]) {
-                console.log('Attaching block to currentPage')
                 block.nodes.forEach(node => currentPage.appendChild(node));
                 currentPage.h += Math.max(currentPage.m, block.t) + block.h;
                 currentPage.m = block.b;
