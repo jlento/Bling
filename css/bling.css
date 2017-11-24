@@ -4,7 +4,7 @@ nav button input {
 
 button, select {
     height: 1.5em;
-    border: 0px;
+    border: 0;
     color: #333;
     background-color: white;
     text-decoration: none;
@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-flow: column;
     height: 100vh;
-    margin: 0px;
+    margin: 0;
     font-family: Arial;
 }
 
@@ -46,9 +46,6 @@ body {
     border: 1px solid gray;
     overflow-y: scroll;
 }
-#markdown {
-    font-size: 12px;
-}
 
 @media print {
     body, #content {
@@ -60,5 +57,5 @@ body {
     #preview {
         width: 100%;
         overflow: hidden;
-        border: 0px;
+        border: 0;
     }

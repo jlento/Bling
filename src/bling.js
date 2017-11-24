@@ -52,9 +52,6 @@
             border = 1,
             width = containerChildWidth,
             height = paper.height / paper.width * width;
-        console.log(`Aspect ratio: PAPER: ${paper.width/paper.height} PAGE: ${width/height}`);
-        console.log(`Text aspect ratio: PAPER: ${((1.0 - 2.0 * paper.marginFraction) * paper.width)/(paper.height- 2.0 * paper.marginFraction * paper.width)} PAGE: ${((1.0 - 2.0 * paper.marginFraction) * width)/(height - 2.0 * paper.marginFraction * width)}`);
-
         return {
             border : border,
             width : width,
