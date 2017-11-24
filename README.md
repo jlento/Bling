@@ -37,9 +37,9 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 
 ## Writing new styles
 
-- Use `rem` units for font sizes in CSS. That should match the font-sizes in
-  both screen (scalable) and on PDF. One `rem` unit corresponds to 12pt on
-  print.
+- Use `rem` units for font sizes, and ALL (border, margin, padding, etc) lengths
+  in CSS. That should match the font-sizes in both screen (scalable) and on PDF.
+  One `rem` unit corresponds to 12pt on print.
 
 ## TODO
 
