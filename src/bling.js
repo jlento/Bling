@@ -1,12 +1,21 @@
     var papers = {
-        a4landscape: {
-            name : 'A4 portrait',
+        a4portrait: {
+            size : 'A4 portrait',
             width : 210,
             height : 297,
             fontSize : 12,
             fontsPerWidth: (210.0 / 4.233333333),
             marginFraction: 0.05
+        },
+        a4landscape: {
+            size : 'A4 landscape',
+            width : 297,
+            height : 210,
+            fontSize : 12,
+            fontsPerWidth: (297.0 / 4.233333333),
+            marginFraction: 0.05
         }
+
     };
 
     var page = previewPage();
@@ -178,8 +187,8 @@
         };
     })();
 
-    function updatePaperStyle () {
-        var paper = papers[document.getElementById('paperSelect').value],
+    function updatePaperStyle (select) {
+        var paper = papers[select.value],
             paperStyle = document.getElementById("paper");
         if(!paperStyle) {
             paperStyle = document.createElement('style');
@@ -189,7 +198,7 @@
         page = previewPage();
         paperStyle.innerHTML = `
 @page {
-    size: ${paper.name};
+    size: ${paper.size};
     margin: 0mm;
 }
 @media print {
@@ -223,13 +232,13 @@
     }
 }
 `;
+        convert();
     }
 
-    updatePaperStyle();
-    window.addEventListener('resize', function () {
-        updatePaperStyle();
-        convert();
-    });
+updatePaperStyle(document.getElementById('paperSelect'));
+window.addEventListener('resize', function () {
+    updatePaperStyle(document.getElementById('paperSelect'));
+});
 
 var bling = function () {
     'use strict';
@@ -248,13 +257,16 @@ var bling = function () {
         saveMarkdown : function () {
             saveString(document.getElementById('markdown').value, 'doc.md');
         },
-        autoConvert : function () {
-            delay(function(){convert();}, 500);
-        },
         printPdf : function () {
             var scrollTop = document.getElementById('preview').scrollTop;
             window.print();
             document.getElementById('preview').scrollTop = scrollTop;
+        },
+        autoConvert : function () {
+            delay(function(){convert();}, 500);
+        },
+        setPaper : function (select) {
+            updatePaperStyle(select);
         },
         setCss : function (path) {
             var css = document.getElementById('blingStyleCss');
