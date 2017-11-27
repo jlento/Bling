@@ -43,6 +43,7 @@ body {
     resize: none;
     outline: none;
     padding: 2px;
+    margin: 2px;
     border: 1px solid gray;
     overflow-y: scroll;
 }
