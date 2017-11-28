@@ -1,22 +1,41 @@
+var bling = function () {
+    'use strict';
+
     var papers = {
         a4portrait: {
+            name : 'A4 portrait',
             size : 'A4 portrait',
             width : 210,
             height : 297,
             fontSize : 12,
             fontsPerWidth: (210.0 / 4.233333333),
-            marginFraction: 0.05
+            marginFraction: 0.05,
+            attributes: 'selected'
         },
         a4landscape: {
+            name : 'A4 landscape',
             size : 'A4 landscape',
             width : 297,
             height : 210,
             fontSize : 12,
             fontsPerWidth: (297.0 / 4.233333333),
-            marginFraction: 0.05
+            marginFraction: 0.05,
+            attributes: ''
+        },
+        projector169: {
+            name : 'Projector 1920:1080',
+            size : '192mm 108mm',
+            width : 192.0,
+            height : 108.0,
+            fontSize : 12,
+            fontsPerWidth: (192.0 / 4.233333333),
+            marginFraction: 0.0,
+            attributes: ''
         }
-
     };
+
+    document.getElementById('paperSelect').innerHTML =
+        `${Object.keys(papers).map(paper => `<option value="${paper}" ${papers[paper].attributes}>${papers[paper].name}</option>`).join('\n')}`;
 
     var page = previewPage();
 
@@ -137,9 +156,9 @@
         };
 
         /*
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
-        };
+         while (container.firstChild) {
+         container.removeChild(container.firstChild);
+         };
          */
 
         container.removeChild(container.firstChild);
@@ -214,7 +233,7 @@
         margin-top: ${paper.marginFraction * paper.width}mm;
         margin-left: ${paper.marginFraction * paper.width}mm;;
         width: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
-        height: ${paper.height - 2.0 * paper.MarginFraction * paper.width}mm;
+        height: ${paper.height - 2.0 * paper.marginFraction * paper.width}mm;
         padding: 0px;
         page-break-after: always;
     }
@@ -235,14 +254,10 @@
         convert();
     }
 
-updatePaperStyle(document.getElementById('paperSelect'));
-window.addEventListener('resize', function () {
     updatePaperStyle(document.getElementById('paperSelect'));
-});
-
-var bling = function () {
-    'use strict';
-
+    window.addEventListener('resize', function () {
+        updatePaperStyle(document.getElementById('paperSelect'));
+    });
 
     return {
         loadMarkdown : function (input) {
