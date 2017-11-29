@@ -25,8 +25,8 @@ var bling = function () {
         projector169: {
             name : 'Projector 1920:1080',
             size : '192mm 108mm',
-            width : 192.0,
-            height : 108.0,
+            width : 192,
+            height : 108,
             fontSize : 12,
             fontsPerWidth: (192.0 / 4.233333333),
             marginFraction: 0.0,
@@ -220,22 +220,23 @@ var bling = function () {
     size: ${paper.size};
     margin: 0mm;
 }
+
 @media print {
-    html, body {
-        margin: 0mm;
+    html, body, #content, #preview {
+        overflow: hidden;
+        width: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
+        margin: 0;
+        border: 0;
+        padding: 0;
         font-size: ${paper.fontSize}pt;
     }
-
-    #preview {
-        margin-top: 0px;
-    }
     .page {
+        overflow: hidden;
         margin-top: ${paper.marginFraction * paper.width}mm;
         margin-left: ${paper.marginFraction * paper.width}mm;;
         width: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
         height: ${paper.height - 2.0 * paper.marginFraction * paper.width}mm;
-        padding: 0px;
-        page-break-after: always;
+        padding: 0;
     }
 }
 

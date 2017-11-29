@@ -1,63 +1,53 @@
-nav button input {
-    display: none;
-}
+@media screen {
+    nav button input {
+        display: none;
+    }
+    button, select {
+        height: 1.5em;
+        border: 0;
+        color: #333;
+        background-color: white;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+    }
+    button:hover, select:hover {
+                      color: black;
+                  }
+    body {
+        display: flex;
+        height: 100vh;
+        flex-flow: column;
+        margin: 0;
+        font-family: Arial;
+    }
 
-button, select {
-    height: 1.5em;
-    border: 0;
-    color: #333;
-    background-color: white;
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
-}
-
-button:hover, select:hover {
-    color: black;
-}
-
-body {
-    display: flex;
-    flex-flow: column;
-    margin: 0;
-    font-family: Arial;
-}
-
-#toolbar {
-    overflow: hidden;
-    font-size: 12px;
-    padding: 3px 3px 0px 3px;
-}
-#content {
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    padding: 3px;
-}
-
-#markdown, #preview {
-    flex: auto;
-    display: block;
-    width: 50%;
-    resize: none;
-    outline: none;
-    padding: 2px;
-    margin: 2px;
-    border: 1px solid gray;
-    overflow-y: scroll;
+    #toolbar {
+        overflow: hidden;
+        font-size: 12px;
+        padding: 3px 3px 0px 3px;
+    }
+    #content {
+        display: flex;
+        flex: 1;
+        justify-content: space-evenly;
+        padding: 3px;
+    }
+    #markdown, #preview {
+        flex: auto;
+        display: block;
+        width: 50%;
+        resize: none;
+        outline: none;
+        padding: 2px;
+        margin: 2px;
+        border: 1px solid gray;
+        overflow-y: scroll;
+    }
 }
 
 @media print {
-    body, #content {
-        display: block;
-    }
     #toolbar, #markdown {
         display: none;
     }
-    #content, #preview {
-        width: 100%;
-        overflow: hidden;
-        border: 0;
-        margin: 0;
-        padding: 0;
-    }
+}

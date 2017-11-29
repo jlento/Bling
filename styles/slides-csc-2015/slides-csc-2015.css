@@ -1,0 +1,26 @@
+#preview {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page:first-of-type {
+    background-image: url(./img/title-en.png);
+    background-size: cover;
+}
+
+h1 {
+    position: relative;
+    margin: 0;
+    padding-top: 23%;
+    padding-left: 28%;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.date {
+    font-weight: normal;
+    color: white;
+    padding-top: 0.5rem;
+    padding-left: 28%;
+    margin: 0px;
+}
