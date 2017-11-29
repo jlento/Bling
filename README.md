@@ -36,10 +36,10 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
   lines inserts a page break
 - Metadata is extracted from blocks
 
->    ---
->    key1: value1
->    key2: value2
->    ---
+        ---
+        key1: value1
+        key2: value2
+        ---
     
   and it is available for style JS scripts in `bling.metadata[key1]`, etc.
   
