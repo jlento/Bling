@@ -34,7 +34,15 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 
 - Three or more equal signs `===` at the beginning of a line surrounded by empty
   lines inserts a page break
+- Metadata is extracted from blocks
 
+    ---
+    key1: value1
+    key2: value2
+    ---
+    
+  and it is available for style JS scripts in `bling.metadata[key1]`, etc.
+  
 ## Writing new styles
 
 - Use `rem` units for font sizes, and ALL (border, margin, padding, etc) lengths

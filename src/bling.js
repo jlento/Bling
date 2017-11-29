@@ -42,17 +42,18 @@ var bling = function () {
     var extensions = [
         {
             type: 'lang',
-            regex : /^ *$\n^====* *$\n^ *$/mg,
-            replace : '<div class="pageBreak"></div>'
+            regex: /^ *$\n^====* *$\n^ *$/mg,
+            replace: '<div class="pageBreak"></div>'
         }
     ];
-    extensions.forEach((ext) => showdown.extension('bling', ext));
+    showdown.extension('bling', extensions);
     showdown.setOption('extensions', ['bling']);
 
     var converter = new showdown.Converter();
 
     function convert () {
-        var text      = document.getElementById('markdown').value,
+        var text      =
+                extractMetadata(document.getElementById('markdown').value),
             target    = document.getElementById('preview'),
             pos       = target.scrollTop,
             html      = converter.makeHtml(text),
@@ -66,6 +67,23 @@ var bling = function () {
         target.firstChild.innerHTML = html;
         paginate(page, target);
         target.scrollTop = pos;
+    }
+
+    var metadata = {};
+    function extractMetadata (text) {
+        return text.replace(
+                /(?:^---\s*[\n\r])((?:.+:.*[\n\r])+)(?:^---\s*[\n\r]\s*$)/m,
+            function (match, p1, offset, string) {
+                p1.replace(
+                        /^\s*([^:]*\S)\s*:\s*(.*\S)\s*$/mg,
+                    function (match, p1, p2) {
+                        metadata[p1] = p2;
+                        return '';
+                    }
+                );
+                return '';
+            }
+        );
     }
 
     function previewPage () {
@@ -261,6 +279,7 @@ var bling = function () {
     });
 
     return {
+        metadata: metadata,
         loadMarkdown : function (input) {
             loadString(input, document.getElementById('markdown'), 'value', convert);
         },
