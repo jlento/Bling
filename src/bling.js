@@ -2,8 +2,7 @@ var bling = function () {
     'use strict';
 
     var papers = {
-        a4portrait: {
-            name : 'A4 portrait',
+        'A4 portrait': {
             size : 'A4 portrait',
             width : 210,
             height : 297,
@@ -12,8 +11,7 @@ var bling = function () {
             marginFraction: 0.05,
             attributes: 'selected'
         },
-        a4landscape: {
-            name : 'A4 landscape',
+        'A4 landscape': {
             size : 'A4 landscape',
             width : 297,
             height : 210,
@@ -22,8 +20,7 @@ var bling = function () {
             marginFraction: 0.05,
             attributes: ''
         },
-        projector169: {
-            name : 'Projector 1920:1080',
+        'Projector 1920:1080': {
             size : '192mm 108mm',
             width : 192,
             height : 108,
@@ -35,7 +32,7 @@ var bling = function () {
     };
 
     document.getElementById('paperSelect').innerHTML =
-        `${Object.keys(papers).map(paper => `<option value="${paper}" ${papers[paper].attributes}>${papers[paper].name}</option>`).join('\n')}`;
+        `${Object.keys(papers).map(paper => `<option value="${paper}" ${papers[paper].attributes}>${paper}</option>`).join('\n')}`;
 
     var page = previewPage();
 
@@ -281,10 +278,27 @@ var bling = function () {
     return {
         metadata: metadata,
         loadMarkdown : function (input) {
-            loadString(input, document.getElementById('markdown'), 'value', convert);
+            loadString(input, document.getElementById('markdown'), 'value', () =>
+                       {
+                           convert();
+                           var selectedPaper = document.getElementById('paperSelect'),
+                               paperInMetadata = bling.metadata.paper;
+                           if (papers.hasOwnProperty(paperInMetadata) &&
+                               (selectedPaper.value != paperInMetadata)) {
+                               selectedPaper.value = paperInMetadata;
+                               updatePaperStyle(selectedPaper);
+                           };
+                           if (bling.metadata.style) {
+                               var styleJs = document.getElementById('blingStyleJs');
+                               styleJs.innerHTML ='';
+                               styleJs.src = bling.metadata.style;
+                           };
+                       });
         },
         loadStyleJs : function (input) {
-            loadString(input, document.getElementById('blingStyleJs'), 'innerHTML', function () {
+            var styleJs = document.getElementById('blingStyleJs');
+            styleJs.removeAttribute('src');
+            loadString(input, styleJs, 'innerHTML', function () {
                 eval(document.getElementById('blingStyleJs').innerHTML);
                 delay(function () {convert();});
             });

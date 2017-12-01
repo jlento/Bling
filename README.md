@@ -4,6 +4,7 @@ Markdown -> HTML -> PDF conversion, with live preview.
 
 Markdown to HTML conversion with Showdown JS, HTML to PDF conversion with browser.
 
+
 ## Status
 
 Proof of concept. The following kind of works:
@@ -18,10 +19,12 @@ Proof of concept. The following kind of works:
     - page breaks between top level elements, only 
     - does not break page after headings
 
+
 ## Requirements
 
 Files in this repository. Browser, tested (and probably works only on) Chromium
 61 on Ubuntu Linux.
+
 
 ## Usage
 
@@ -30,6 +33,7 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 `File` menu, navigate to `styles/form-green/form-green.js`, and open it. Select
 `Print PDF` from `File` menu. Enjoy.
 
+
 ## Additional markdown
 
 - Three or more equal signs `===` at the beginning of a line surrounded by empty
@@ -37,17 +41,23 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 - Metadata is extracted from blocks
 
         ---
-        key1: value1
-        key2: value2
+        date: 2017-11-29
+        style: ./styles/slides-csc-2015/slides-csc-2015.js
+        paper: Projector 1920:1080
         ---
     
-  and it is available for style JS scripts in `bling.metadata[key1]`, etc.
-  
+  and it is available for style JS scripts in `bling.metadata[key1]`, etc. When
+  markdown file is loaded, the style (path to style JS file relative to editor
+  "app" page `index.html`) in the field `style` is loaded, and the paper size in
+  the fied `paper` is set.
+
+
 ## Writing new styles
 
 - Use `rem` units for font sizes, and ALL (border, margin, padding, etc) lengths
   in CSS. That should match the font-sizes in both screen (scalable) and on PDF.
   One `rem` unit corresponds to 12pt on print.
+
 
 ## TODO
 
@@ -56,6 +66,7 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 - headers and footers
 - page numbering
 - plus all stuff in the source TODO comments...
+
 
 ## Known limitations
 
