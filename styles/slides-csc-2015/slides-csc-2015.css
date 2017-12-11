@@ -7,6 +7,13 @@
     background-size: cover;
 }
 
+.page {
+    background-image: url(./img/CSC_logo.svg), linear-gradient(to right, #830051 50%, #006778 50%, #006778 75%, #7dc242 75%, #7dc242 75%);
+    background-size: 12%, 100% 0.5rem;
+    background-position: 97% 3%, bottom left;
+    background-repeat: no-repeat, no-repeat;
+}
+
 h1 {
     position: relative;
     margin: 0;
@@ -24,3 +31,4 @@ h1 {
     padding-left: 28%;
     margin: 0px;
 }
+

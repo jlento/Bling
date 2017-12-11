@@ -46,10 +46,12 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
         paper: Projector 1920:1080
         ---
     
-  and it is available for style JS scripts in `bling.metadata[key1]`, etc. When
-  markdown file is loaded, the style (path to style JS file relative to editor
+  and the values are available for style JS scripts in `bling.metadata['key']`, and as a
+  macro BLINGMETADATA[key] in the markdown.
+  
+  When markdown file is loaded, the style (path to style JS file relative to editor
   "app" page `index.html`) in the field `style` is loaded, and the paper size in
-  the fied `paper` is set.
+  the field `paper` is set.
 
 
 ## Writing new styles
@@ -57,7 +59,12 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 - Use `rem` units for font sizes, and ALL (border, margin, padding, etc) lengths
   in CSS. That should match the font-sizes in both screen (scalable) and on PDF.
   One `rem` unit corresponds to 12pt on print.
-
+- the following CSS variables are available for custom styles
+    - `width` -- page width, including margins
+    - `height` -- page height, including margins
+    - `fontsize` -- base `rem` font size
+    - `textwidth` -- page width without margins (drawable area)
+    - `textheight` -- page height without margins (drawable area)
 
 ## TODO
 

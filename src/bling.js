@@ -41,6 +41,11 @@ var bling = function () {
             type: 'lang',
             regex: /^ *$\n^====* *$\n^ *$/mg,
             replace: '<div class="pageBreak"></div>'
+        },
+        {
+            type: 'lang',
+            regex: /BLINGMETADATA\[(\w+)\]/g,
+            replace: (match, p1) => bling.metadata[p1] || ''
         }
     ];
     showdown.extension('bling', extensions);
@@ -237,33 +242,47 @@ var bling = function () {
 }
 
 @media print {
+    :root {
+        --width: ${paper.width}mm;
+        --height: ${paper.height}mm;
+        --fontsize: ${paper.fontSize}pt;
+        --textwidth: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
+        --textheight: ${paper.height - 2.0 * paper.marginFraction * paper.width}mm;
+    }
     html, body, #content, #preview {
         overflow: hidden;
-        width: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
+        width: var(--width);
         margin: 0;
         border: 0;
         padding: 0;
-        font-size: ${paper.fontSize}pt;
+        font-size: var(--fontsize);
     }
     .page {
         overflow: hidden;
         margin-top: ${paper.marginFraction * paper.width}mm;
         margin-left: ${paper.marginFraction * paper.width}mm;;
-        width: ${(1.0 - 2.0 * paper.marginFraction) * paper.width}mm;
-        height: ${paper.height - 2.0 * paper.marginFraction * paper.width}mm;
+        width: var(--textwidth);
+        height: var(--textheight);
         padding: 0;
     }
 }
 
 @media screen {
+    :root {
+        --width: ${page.width}mm;
+        --height: ${page.height}mm;
+        --fontsize: ${page.fontSize}px;
+        --textwidth: ${page.textWidth}px;
+        --textheight: ${page.textHeight}px;
+    }
     html {
-        font-size: ${page.fontSize}px;
+        font-size: var(--fontsize);
     }
     .page {
         border: 1px dashed gray;
         padding: ${page.padding}px;
-        width: ${page.textWidth}px;
-        height: ${page.textHeight}px;
+        width: var(--textwidth);
+        height: var(--textheight);
     }
 }
 `;
