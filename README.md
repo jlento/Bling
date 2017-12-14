@@ -68,6 +68,7 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 
 ## TODO
 
+- Add snowdown KaTeX plugin (at least for slides)!
 - lot's of cleaning, of course...
 - rewrite...
 - headers and footers
