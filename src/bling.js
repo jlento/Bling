@@ -239,7 +239,7 @@ var bling = function () {
         paperStyle.innerHTML = `
 @page {
     size: ${paper.size};
-    margin: 0mm;
+    margin: ${paper.marginFraction * paper.width}mm;
 }
 
 @media print {
@@ -252,16 +252,14 @@ var bling = function () {
     }
     html, body, #content, #preview {
         overflow: hidden;
-        width: var(--width);
-        margin: 0;
-        border: 0;
-        padding: 0;
+        width: var(--textwidth);
+	margin: 0;
+	border: 0;
+	padding: 0;
         font-size: var(--fontsize);
     }
     .page {
         overflow: hidden;
-        margin-top: ${paper.marginFraction * paper.width}mm;
-        margin-left: ${paper.marginFraction * paper.width}mm;;
         width: var(--textwidth);
         height: var(--textheight);
         padding: 0;
@@ -336,8 +334,8 @@ var bling = function () {
         },
         printPdf : function () {
             var scrollTop = document.getElementById('preview').scrollTop;
-            window.print();
-            document.getElementById('preview').scrollTop = scrollTop;
+	    window.print();
+	    document.getElementById('preview').scrollTop = scrollTop;
         },
         autoConvert : function () {
             delay(function(){convert();}, 500);
