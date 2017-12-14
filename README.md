@@ -68,7 +68,10 @@ Open `index.html`, select `Load Markdown` from `File` menu, navigate to
 
 ## TODO
 
+- Add possibility to get the markdown examples and Bling styles from the
+  https://jlento.github.io/Bling site directly, instead of from local disc
 - Add snowdown KaTeX plugin (at least for slides)!
+- Possibly use Bootstrap to prettify GUI
 - lot's of cleaning, of course...
 - rewrite...
 - headers and footers
