@@ -1,5 +1,6 @@
 ---
 style: ./styles/form-green/form-green.js
+paper: A4 portrait
 ---
 
 # ISÄNNÖITSIJÄNTODISTUS

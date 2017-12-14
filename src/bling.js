@@ -293,6 +293,10 @@ var bling = function () {
         updatePaperStyle(document.getElementById('paperSelect'));
     });
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     return {
         metadata: metadata,
         loadMarkdown : function (input) {
@@ -306,10 +310,14 @@ var bling = function () {
                                selectedPaper.value = paperInMetadata;
                                updatePaperStyle(selectedPaper);
                            };
-                           if (bling.metadata.style) {
-                               var styleJs = document.getElementById('blingStyleJs');
-                               styleJs.innerHTML ='';
-                               styleJs.src = bling.metadata.style;
+                           if (metadata.style) {
+                               var oldStyle = document.getElementById('blingStyleJs'),
+                                   parent = oldStyle.parentNode,
+                                   newStyle = document.createElement('script');
+                               newStyle.id = 'blingStyleJs';
+                               newStyle.src = metadata.style;
+                               parent.removeChild(oldStyle);
+                               parent.appendChild(newStyle);
                            };
                        });
         },
@@ -318,7 +326,7 @@ var bling = function () {
             styleJs.removeAttribute('src');
             loadString(input, styleJs, 'innerHTML', function () {
                 eval(document.getElementById('blingStyleJs').innerHTML);
-                delay(function () {convert();});
+                delay(function () {convert();},10);
             });
         },
         saveMarkdown : function () {
