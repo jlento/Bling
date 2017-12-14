@@ -5,9 +5,7 @@ paper: A4 portrait
 
 # ISÄNNÖITSIJÄNTODISTUS
 
-
-## §3 TODISTUKSEN KOHDE
-
+## 3 § TODISTUKSEN JA SEN KOHTEEN YKSILÖINTI
 
 - 1\. Yhtiön nimi, yritys- ja yhteisötunnus   
   ja rekisteröintipäivä
@@ -24,47 +22,48 @@ paper: A4 portrait
 - 3\. Osakkeiden numerot, lukumäärä   
   ja huoneiston tunnus
 
-        XX-XX, Xkpl, Asunto XX
+        X-Y, N kpl, asunto A
 
-- 4\. Isännöitsijän tai hallituksen puheejohtajan nimi ja osoite
+- 4\. Isännöitsijän tai hallituksen puheenjohtajan nimi ja osoite
 
         XXXXXXX XXXXXXXXX
         XXXXXXXXXX X X X
         XXXXX XXXXXXXXX
 
-## §4 OSAKEHUONEISTO
+
+
+## 4 § TIEDOT OSAKEHUONEISTOSTA
 
 ### Yleiset tiedot
 
 - 1\. Huoneiston käyttötarkoitus
 
-        Asuinhuoneisto
-        puolisoiden yhteisenä kotina
+        Puolisoiden yhteisenä kotina
 
 - 2\. Huoneiston pinta-ala
 
-        Yhtiöjärjestyksen mukainen XX m2
-        Tarkistusmitattu XX m2
+        Yhtiöjärjestyksen mukainen X m²
+        Tarkistusmitattu X m²
 
 - 3\. Huoneiden lukumäärä
 
-        Xh + k
+        x h + k + s +khh
 
 - 4\. Muut tilat joihin hallintaoikeus, esim. varastotilat, autopaikka
-  tai piha-alue, hallinan peruste, pinta-ala ja sijainti
+  tai piha-alue, hallinnan peruste, pinta-ala ja sijainti
 
         Käyttöullakko
         Kellarivarasto
 
 - 5\. Osakeluetteloon merkityt omistajat, osuus ja merkintäpäivä
 
-        XXXX XXXXXXX, XX%, XX.XX.XXXX
-        XXXX XXXXXXX, XX%, XX.XX.XXXX
+        N. N., X %, p.k.vvvv
+        M. M., X %, p.k.vvvv
 
 ### Osakkeisiin kohdistuvat rajoitteet
 
 - 6\. Yhtiöjärjestyksen mukainen lunastusoikeus osakkeisiin, tai muut   
-  osakkeisiin kohdistvat luovutus-, hallinta- tai käyttörajoitukset
+  osakkeisiin kohdistuvat luovutus-, hallinta- tai käyttörajoitukset
 
         Lunastusoikeus osakkailla
 
@@ -75,18 +74,18 @@ paper: A4 portrait
 
 ### Osakkeisiin kohdistuvat velvollisuudet
 
-- 8\. Vastikkeet ja vastikeperusteet (vastike; peruste; €/vastikeperuste)
+- 8\. Vastikkeet ja vastikeperusteet (vastike, peruste, €/vastikeperuste)
 
-        Hoitovastike; XXX,XX €/kk; XX m2; X,X €/m2
+        Hoitovastike; x €/kk, y m², z €/m²
 
 - 9\. Yhtiölle suoritettavat muut maksut
 
-        -
+        x
 
 - 10\. Yhtiö hakeutunut arvonlisäverovelvolliseksi
   huoneiston osalta
     
-        -
+        x
 
 - 11\. Huoneistoon kohdistuvat lainaosuudet
 
@@ -98,7 +97,7 @@ paper: A4 portrait
 
 ### Osakkeeseen liittyvät huolto- ja kunnossapitovelvollisuudet
 
-- 13\. Osakehuoneiston käytön tai käyttökustannusten kannalta\
+- 13\. Osakehuoneiston käytön tai käyttökustannusten kannalta
 olennaiset viat ja puutteet
 
         -
@@ -111,174 +110,186 @@ olennaiset viat ja puutteet
 sekä osakkaan oikeudet muutostöihin
 
         -
-    
-## §5 YHTIÖN KIINTEISTÖT JA RAKENNUKSET
 
-- 1\. Kiinteistötunnus (kunta, kaupunginosa/kylä,\
+===
+
+## 5 § TIEDOT YHTIÖN KIINTEISTÖISTÄ JA RAKENNUKSISTA
+
+### Kiinteistö
+
+- 1\. Kiinteistötunnus (kunta, kaupunginosa/kylä,
    kortteli, tontti/tila), tontin pinta-ala 
 
         XXX-XXX-XXXX-XXXX-X
         XXXXXXXXX, XXXXXXXXX XX, XXX, X
-        XXX m2
+        XXX m²
 
 - 2\. Hallintaperuste ja lunastusoikeus
 
         Vuokrasopimus
         
-- 3\. Vuokranantaja, vuorasopimuksen päättymispäivä, vuosivuokra,\
-  tarkistusperuste, mahdollinen yhtiön tai osakkaan lunastusoikeus,\
-  osakkaisen vastuu vuokran maksamisesta
+- 3\.1 Vuokranantaja
 
-        Helsingin Kaupunki; 2020; XXXX,XX €
+        x
 
-- 4\. Rakennusten lukumäärä, käyttöönottovuosi, talotyyppi, pääasiallinen\
-   rakennusaine, kattotyyppi, kate, lämmitys-, jäähdytys-, ilmanvaihto-\
+- 3.\2 Vuokrasuhteen   
+   päättymispäivä
+
+        p.k.vvvv
+
+- 3\.3 Vuosivuokran määrä   
+   ja tarkistusperuste
+
+        x €, x
+
+- 3\.4 Yhtiön tai osakkaan lunastusoikeus
+
+        -
+
+- 3\.5 Osakehuoneistojen erilainen vastuu vuokran maksamisesta
+
+        x
+
+### Rakennukset
+
+- 4\.1 Rakennusten   
+   lukumäärä
+
+        x
+
+- 4\.2 Käyttöönottovuosi
+
+        x
+
+- 4\.3 Talotyyppi
+
+        x
+
+- 4\.4 Pääasiallinen rakennusaine, kattotyyppi ja kate, lämmitys-, jäähdytys-, ilmanvaihto-
    ja tietoliikennejärjestelmät, hissit
+
+        x
    
-- 5\. rakennusten kerrosala, tilavuus sekä kerrosten ja\
-  porrashuoneiden lukumäärä
+- 5\.1 Rakennusten kerrosala ja tilavuus
 
+        x
 
+- 5\.2 Kerrosten lukumäärä
 
+        x
 
-- Yhtiön nimi ja osoite
+- 5\.3 Porrashuoneiden lukumäärä
 
-    As Oy XXXXXXXXXXX X
-    XXXXXXXXX X
-    XXXXX XXXXXXXX
-
-- Y-tunnus
-
-        XXXXXXX-X
-
-- Kaupparekisterimerkinnän päivämäärä\
-  ja reknro
-
-        DD.MM.YYYY/XXX.XXX
-
+        x
 
 - Käyttämätön rakennusoikeus
 
+        x m²
+
+- 6\. Muut yhteisomistajat ja näiden omistusosuudet sekä yhteisomistuksen ehdot ja tiedot hallinnanjakosopimuksen rekisteröinnistä
+
         -
 
-- Tontin omistus
+### Huoneistot, muut tilat ja autopaikat
 
-        Vuokra/Oma
-
-- Tontin vuokranantaja
-
-        XXXXXXXXXX XXXXXXXXX
-
-- Vuokra-aika päättyy
-
-        DD.MM.YYYY
-
-- Tontin vuosivuokra
-
-
-
-- Vuokrantarkistusperuste
-
-        Indeksi
-
-- Rakennusten\
-  lukumäärä
-
-        X
-
-- Talotyyppi
-
-        XXXXXXXXXXXXX
-
-- Kerroksia
-
-        X
-    
-- Porraskäytävien\
-  lukumäärä
-
-        X
-
-- Tilavuus
-
-        XXXX m2
-
-- Kerrosala
-
-        XXX m2
-
-- Huoneistot ja tilat (käyttötarkoitus, lukumäärä,\
-pinta-alat, osakemäärä, yhtiön hallinnnassa)
+- 7\.1 Asuinosakehuoneistojen  lukumäärä, yhteenlaskettu pinta-ala ja osakemäärä
          
-        Asuinhuoneistot, X, XXX m2, XX, -
+        x kpl, y m², z
 
-- Autopaikat
+- 7\.2 Muiden kuin asuinosakehuoneistojen lukumäärä, yhteenlaskettu pinta-ala ja osakemäärä
 
-        X kpl, lämmityspistoke, X €/kk
+        x kpl, y m², z
 
-- Osakkeenomistajien käyttöön varatut muut tilat
+- 8\.1 Pysyvässä hallinnassa olevat huoneistot ja niiden yhteenlaskettu pinta-ala ja osakemäärä
 
-        kellarikomerot, sauna, askarteluhuone, ulkoiluvälinevarasto
+        x kpl, y m²
 
-- Osakekirjat painettava\
-turvapainossa
+- 8\.2 Autopaikat
 
-        Kyllä/Ei
+        x kpl, lämmityspistoke, x €/kk
 
-- Voimassa olevan yhtiö-\
-järjestyksen rekisteröintipäivä
+- 8\.3 Muut osakkeenomistajien käytössä olevat tilat
 
-        DD.MM.YYYY
+        x
 
-- Pääasiallinen\
-rakennusaine
+- 9\. Kunnossapito-   
+   suunnitelma (on/ei/liitteenä)
 
-        XXXXXXXXX
-        
-- Lämmitysenergia
+        on
 
-        XXXXXXXXXXXXXXXXXX
+- 10\. Lähivuosien aikana tiedossa olevat korjaukset ja perusparannukset 
 
-- Ilmanvaihtotapa
+        x
 
-        Alakerrassa koneellinen,
-        yläkerrassa painovoimainen
+- 11\. Yhtiössä suoritetut kuntoarviot
 
-- Kattotyyppi
+        x
 
-        Harja/pulpetti
+- 12\. Viimeisimmän yhtiökokouksen jälkeen ilmenneet korjaustarpeet
 
-- Kattomateriaali
+        x
 
-        Pelti
+- 13\. Yhtiössä suoritetut kunnossapito- ja muutostöistä sekä niiden valmistumisajankohdat
 
-- Antennijärjestelmä
+        x
 
-        Yhteisantenni
+===
 
-- Energiatodistus
+## 6 § TIEDOT YHTIÖN TALOUDESTA
+
+- 1\. Lainat, lainapäätökset ja luotolliset tilit, sekä niiden käyttötarkoitus
+
+        x
+
+- 2\. Yhtiövastike ja määräämisen peruste
+
+        x €/kk
+
+- 3\. Arvonlisävelvollisuus
+
+        ei ole
+
+- 4\.1 Vakuutusyhtiö ja vakuutuslaji
+
+        Kuka vastaa Oy, ilkivalta- ja palovakuutus
+
+- 4\.2 Vakuutuksen arvo
+
+        x €
+
+## 7 § MUUT TIEDOT
+
+- 1\.1 Kiinteistönhoito
+
+        Kiinteistönhoito Turha toivo Oy
+        Jersey Post
+        Postal Head Quarters JERSEY
+        JE1 1AA
+        CHANNEL ISLANDS
+
+- 1\.2 Isännöitsijä
+
+        Isännöinti Emme vastaa Oy
+        Jersey Post
+        Postal Head Quarters JERSEY
+        JE1 1AA
+        CHANNEL ISLANDS
+
+- 2\. Osakekirjat
+
+        Painettu turvapainossa
+
+- 3\. Energiatodistus (on/ei ole)
+
+        ei ole
+
+- 4\. Lunastuslauseke ja muut yhtiössä sovellettavat luovutusta koskevat rajoitukset
 
         -
 
-- Yhtiön lainat
+- Lisätiedot
 
         -
-
-- Kiinteistönhoito
-
-        Osakkaat
-
-- Isännöitsijä
-
-        -
-
-- Hallituksen puheenjohtaja
-
-        XXXXXXXX XXXXXXXXXX
-        XXXXXXXXXXX X X X
-        XXXXX XXXXXXXXX
-
-        +XXX XX XXXXXXX
 
 ## TODISTUKSEN TILAAJA JA ANTAJA
 
@@ -295,7 +306,7 @@ rakennusaine
         XXXXXXXXXXXX XX XX            XXXXXXXXXXXX XX XX
         XXXXX XXXXXXXXXXXXXX          XXXXX XXXXXXXXXXXXXX
 
-- Laadittu ohjeen "Valtioneuvoston asetus osakehuoneistojen pinta-alan\
+- Laadittu ohjeen "Valtioneuvoston asetus osakehuoneistojen pinta-alan 
   mittaustavasta ja isännöitsijäntodistuksesta, 12.5.2010/365" mukaan
 
 ## LIITTEET
