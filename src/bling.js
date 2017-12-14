@@ -67,7 +67,7 @@ var bling = function () {
         };
         target.appendChild(longpage);
         target.firstChild.innerHTML = html;
-        paginate(page, target);
+        delay(() => paginate(page, target),1000);
         target.scrollTop = pos;
     }
 
@@ -154,7 +154,6 @@ var bling = function () {
             if (block.h + block.m > page.textHeight) {
                 console.warn(`Block height exeeds page height`);
                 if (currentPage.firstChild) {
-                    pageDivs.push(new PageDiv());
                     currentPage = pageDivs[pageDivs.length - 1];
                 }
                 block.nodes.forEach(node => currentPage.appendChild(node));

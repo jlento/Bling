@@ -1,8 +1,12 @@
-ISÄNNÖITSIJÄNTODISTUS
-=====================
+---
+style: ./styles/form-green/form-green.js
+---
 
-§3 TODISTUKSEN KOHDE
---------------------
+# ISÄNNÖITSIJÄNTODISTUS
+
+
+## §3 TODISTUKSEN KOHDE
+
 
 - 1\. Yhtiön nimi, yritys- ja yhteisötunnus   
   ja rekisteröintipäivä
@@ -27,8 +31,9 @@ ISÄNNÖITSIJÄNTODISTUS
         XXXXXXXXXX X X X
         XXXXX XXXXXXXXX
 
-§4 TIEDOT OSAKEHUONEISTOSTA
----------------------
+## §4 OSAKEHUONEISTO
+
+### Yleiset tiedot
 
 - 1\. Huoneiston käyttötarkoitus
 
@@ -55,6 +60,8 @@ ISÄNNÖITSIJÄNTODISTUS
         XXXX XXXXXXX, XX%, XX.XX.XXXX
         XXXX XXXXXXX, XX%, XX.XX.XXXX
 
+### Osakkeisiin kohdistuvat rajoitteet
+
 - 6\. Yhtiöjärjestyksen mukainen lunastusoikeus osakkeisiin, tai muut   
   osakkeisiin kohdistvat luovutus-, hallinta- tai käyttörajoitukset
 
@@ -64,6 +71,8 @@ ISÄNNÖITSIJÄNTODISTUS
   osakehuoneisto yhtiön toimesta vuokrattu
    
         -
+
+### Osakkeisiin kohdistuvat velvollisuudet
 
 - 8\. Vastikkeet ja vastikeperusteet (vastike; peruste; €/vastikeperuste)
 
@@ -86,6 +95,8 @@ ISÄNNÖITSIJÄNTODISTUS
 
         -
 
+### Osakkeeseen liittyvät huolto- ja kunnossapitovelvollisuudet
+
 - 13\. Osakehuoneiston käytön tai käyttökustannusten kannalta\
 olennaiset viat ja puutteet
 
@@ -100,8 +111,7 @@ sekä osakkaan oikeudet muutostöihin
 
         -
     
-§5 YHTIÖN KIINTEISTÖT JA RAKENNUKSET
---------------------------------
+## §5 YHTIÖN KIINTEISTÖT JA RAKENNUKSET
 
 - 1\. Kiinteistötunnus (kunta, kaupunginosa/kylä,\
    kortteli, tontti/tila), tontin pinta-ala 
@@ -269,8 +279,7 @@ rakennusaine
 
         +XXX XX XXXXXXX
 
-TODISTUKSEN TILAAJA JA ANTAJA
-------------------------------------
+## TODISTUKSEN TILAAJA JA ANTAJA
 
 - Tilaaja
 
@@ -288,8 +297,7 @@ TODISTUKSEN TILAAJA JA ANTAJA
 - Laadittu ohjeen "Valtioneuvoston asetus osakehuoneistojen pinta-alan\
   mittaustavasta ja isännöitsijäntodistuksesta, 12.5.2010/365" mukaan
 
-LIITTEET
-----------
+## LIITTEET
 
 - 
 

@@ -28,7 +28,14 @@ h1 {
 h2 {
     color: green;
     margin: 0px;
-    padding-top: 0.1rem;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+}
+
+h3 {
+    color: green;
+    margin: 0px;
+    padding-top: 0;
     font-size: 1rem;
 }
 
