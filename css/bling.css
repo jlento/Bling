@@ -19,10 +19,10 @@
         height: 100vh;
         flex-flow: column;
         margin: 0;
-        font-family: Arial;
     }
 
     #toolbar {
+        font-family: Arial;
         overflow: hidden;
         font-size: 12px;
         padding: 3px 3px 0px 3px;
