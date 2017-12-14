@@ -67,7 +67,7 @@ var bling = function () {
         };
         target.appendChild(longpage);
         target.firstChild.innerHTML = html;
-        delay(() => paginate(page, target),1000);
+        delay(() => paginate(page, target),10);
         target.scrollTop = pos;
     }
 
