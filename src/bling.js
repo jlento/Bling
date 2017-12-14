@@ -67,7 +67,7 @@ var bling = function () {
         };
         target.appendChild(longpage);
         target.firstChild.innerHTML = html;
-        delay(() => paginate(page, target),10);
+        delay(() => paginate(page, target),1);
         target.scrollTop = pos;
     }
 
@@ -157,7 +157,7 @@ var bling = function () {
                     currentPage = pageDivs[pageDivs.length - 1];
                 }
                 block.nodes.forEach(node => currentPage.appendChild(node));
-                block = {nodes : [], breakAfter : false, h : 0, t : 0, b : 0};
+                block = {nodes : [], breakAfter : true, h : 0, t : 0, b : 0};
                 pageDivs.push(new PageDiv());
                 currentPage = pageDivs[pageDivs.length - 1];
                 continue;
@@ -170,8 +170,10 @@ var bling = function () {
                 block.nodes.forEach(node => currentPage.appendChild(node));
                 currentPage.h += Math.max(currentPage.m, block.t) + block.h;
                 currentPage.m = block.b;
-                block = {nodes : [], breakAfter : false, h : 0, t : 0, b : 0};
+                block = {nodes : [], breakAfter : true, h : 0, t : 0, b : 0};
             }
+	    //console.log(node.tagName + " " + node.className + " " + node.height + " " + block.h + " " + currentPage.h + " " + Math.floor(page.textHeight));
+
         };
 
         /*
@@ -326,7 +328,7 @@ var bling = function () {
             styleJs.removeAttribute('src');
             loadString(input, styleJs, 'innerHTML', function () {
                 eval(document.getElementById('blingStyleJs').innerHTML);
-                delay(function () {convert();},10);
+                delay(function () {convert();},1);
             });
         },
         saveMarkdown : function () {

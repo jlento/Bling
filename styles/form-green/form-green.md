@@ -111,8 +111,6 @@ sekä osakkaan oikeudet muutostöihin
 
         -
 
-===
-
 ## 5 § TIEDOT YHTIÖN KIINTEISTÖISTÄ JA RAKENNUKSISTA
 
 ### Kiinteistö
@@ -232,8 +230,6 @@ sekä osakkaan oikeudet muutostöihin
 - 13\. Yhtiössä suoritetut kunnossapito- ja muutostöistä sekä niiden valmistumisajankohdat
 
         x
-
-===
 
 ## 6 § TIEDOT YHTIÖN TALOUDESTA
 
