@@ -8,16 +8,16 @@
 
     <body>
 
-        <nav id="toolbar">
+        <div id="toolbar">
             <button data-action="loadMarkdown">Load Markdown</button>
             <button data-action="loadStyleJs">Load Style JS</button>
             <button data-action="printPdf">Print PDF</button>
             <button data-action="saveMarkdown">Save Markdown</button>
             <select data-options="papers" data-callback="setPaper"></select>
-        </nav>
+        </div>
 
         <div id="content">
-            <textarea id="markdown" oninput="bling.autoConvert()"></textarea>
+            <textarea id="markdown"></textarea>
             <div id="preview"></div>
         </div>
 

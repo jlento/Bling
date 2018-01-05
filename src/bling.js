@@ -113,7 +113,7 @@ var bling = function () {
     }
 
     new Toolbar(toolbar, {papers});
-
+    markdown.addEventListener('input', autoConvert);
 
 //    document.getElementById('paperSelect').innerHTML =
 //        `${Object.keys(papers).map(paper => `<option value="${paper}" ${papers[paper].attributes}>${paper}</option>`).join('\n')}`;
@@ -385,11 +385,12 @@ var bling = function () {
         input.click();
     }
 
+    function autoConvert () {
+        delay(function(){convert();}, 500);
+    }
+
     return {
         metadata: metadata,
-        autoConvert : function () {
-            delay(function(){convert();}, 500);
-        },
         setCss : function (path) {
             var css = document.getElementById('blingStyleCss');
             if (!css) {
