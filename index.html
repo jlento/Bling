@@ -9,22 +9,11 @@
     <body>
 
         <nav id="toolbar">
-            <button onClick="this.firstElementChild.click()">
-                Load Markdown
-                <input id="fileInput" type="file" accept=".md" onchange="bling.loadMarkdown(this)">
-            </button>
-            <button onClick="this.firstElementChild.click()">
-                Load Style
-                <input type="file" accept=".js" onchange="bling.loadStyleJs(this)">
-            </button>
-            <button onClick="bling.printPdf()">
-                Print PDF
-            </button>
-            <button onClick="bling.saveMarkdown()">
-                Save Markdown
-            </button>
-            <select id="paperSelect" onchange="bling.setPaper(this)">
-            </select>
+            <button data-action="loadMarkdown">Load Markdown</button>
+            <button data-action="loadStyleJs">Load Style JS</button>
+            <button data-action="printPdf">Print PDF</button>
+            <button data-action="saveMarkdown">Save Markdown</button>
+            <select data-options="papers" data-callback="setPaper"></select>
         </nav>
 
         <div id="content">

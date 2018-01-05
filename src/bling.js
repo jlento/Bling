@@ -1,6 +1,9 @@
 var bling = function () {
     'use strict';
 
+    const toolbar = document.getElementById('toolbar');
+    const markdown = document.getElementById('markdown');
+
     var papers = {
         'A4 portrait': {
             size : 'A4 portrait',
@@ -31,8 +34,89 @@ var bling = function () {
         }
     };
 
-    document.getElementById('paperSelect').innerHTML =
-        `${Object.keys(papers).map(paper => `<option value="${paper}" ${papers[paper].attributes}>${paper}</option>`).join('\n')}`;
+
+    class Toolbar {
+        constructor(elem, config) {
+            this._elem = elem;
+            elem.onclick = this.onClick.bind(this);
+            elem.onchange = this.onChange.bind(this);
+
+            for (let select of elem.querySelectorAll('select[data-options]')) {
+                console.log(select);
+                let options = Object.keys(config[select.dataset.options]);
+                select.innerHTML =
+                    `${options.map(option => `<option value="${option}">${option}</option>`).join('\n')}`;
+            }
+        }
+
+        loadMarkdown() {
+            loadTextUsingFileDialog('.md', function(text) {
+                markdown.value = text;
+                convert();
+                var selectedPaper = toolbar.querySelector('select[data-options="papers"]'),
+                    paperInMetadata = bling.metadata.paper;
+                if (papers.hasOwnProperty(paperInMetadata) &&
+                    (selectedPaper.value != paperInMetadata)) {
+                    selectedPaper.value = paperInMetadata;
+                    updatePaperStyle(selectedPaper);
+                };
+                if (metadata.style) {
+                    var oldStyle = document.getElementById('blingStyleJs'),
+                        parent = oldStyle.parentNode,
+                        newStyle = document.createElement('script');
+                    newStyle.id = 'blingStyleJs';
+                    newStyle.src = metadata.style;
+                    parent.removeChild(oldStyle);
+                    parent.appendChild(newStyle);
+                };
+                convert();
+            });
+        }
+
+        loadStyleJs() {
+            loadTextUsingFileDialog('.js', function(text) {
+                const styleJs = document.getElementById('blingStyleJs');
+                styleJs.removeAttribute('src');
+                styleJs.innerHTML = text;
+                eval(document.getElementById('blingStyleJs').innerHTML);
+                delay(function () {convert();},1);
+            });
+        }
+
+        printPdf() {
+            var scrollTop = document.getElementById('preview').scrollTop;
+	          window.print();
+	          document.getElementById('preview').scrollTop = scrollTop;
+        }
+
+        saveMarkdown() {
+            saveString(document.getElementById('markdown').value, 'doc.md');
+        }
+
+        setPaper(select) {
+            updatePaperStyle(select);
+        }
+
+        onClick(event) {
+            let action = event.target.dataset.action;
+            if (action) {
+                this[action]();
+            }
+        };
+
+        onChange(event) {
+            let callback = event.target.dataset.callback;
+            if (callback) {
+                this[callback](event.target);
+            }
+        };
+    }
+
+    new Toolbar(toolbar, {papers});
+
+
+//    document.getElementById('paperSelect').innerHTML =
+//        `${Object.keys(papers).map(paper => `<option value="${paper}" ${papers[paper].attributes}>${paper}</option>`).join('\n')}`;
 
     var page = previewPage();
 
@@ -89,8 +173,9 @@ var bling = function () {
     }
 
     function previewPage () {
+        console.log(toolbar.querySelector('select[data-options="papers"]').value);
         var container = document.getElementById('preview'),
-            paper = papers[document.getElementById('paperSelect').value],
+            paper = papers[toolbar.querySelector('select[data-options="papers"]').value],
             style = window.getComputedStyle(container),
             containerChildWidth = parseInt(container.clientWidth)
                 - parseInt(style.borderLeft)
@@ -188,20 +273,6 @@ var bling = function () {
         };
     }
 
-    function loadString (input, element, property, callback) {
-        var file = input.files[0];
-        if (file) {
-            var reader  = new FileReader();
-            reader.onload = function () {
-                element[property] = reader.result;
-                callback();
-            };
-            reader.readAsText(file);
-            input.value = '';
-        };
-    }
-
-
     function saveString (string, defaultFileName) {
         var fname = prompt("Save as...", defaultFileName);
         if (fname) {
@@ -288,60 +359,36 @@ var bling = function () {
         convert();
     }
 
-    updatePaperStyle(document.getElementById('paperSelect'));
+    updatePaperStyle(toolbar.querySelector('select[data-options="papers"]'));
     window.addEventListener('resize', function () {
-        updatePaperStyle(document.getElementById('paperSelect'));
+        updatePaperStyle(toolbar.querySelector('select[data-options="papers"]'));
     });
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+    function loadTextUsingFileDialog(fileType, callback) {
+        const input = document.createElement('input');
+        input.id = 'tmpFileInput';
+        input.type='file';
+        input.style.display = 'none;';
+        if (fileType) input.accept = fileType;
+        input.onchange = () => {
+            var file = input.files[0];
+            if (file) {
+                var reader  = new FileReader();
+                reader.onload = function () {
+                    callback(reader.result);
+                    document.body.removeChild(input);
+                };
+                reader.readAsText(file);
+            };
+        };
+        document.body.appendChild(input);
+        input.click();
     }
 
     return {
         metadata: metadata,
-        loadMarkdown : function (input) {
-            loadString(input, document.getElementById('markdown'), 'value', () =>
-                       {
-                           convert();
-                           var selectedPaper = document.getElementById('paperSelect'),
-                               paperInMetadata = bling.metadata.paper;
-                           if (papers.hasOwnProperty(paperInMetadata) &&
-                               (selectedPaper.value != paperInMetadata)) {
-                               selectedPaper.value = paperInMetadata;
-                               updatePaperStyle(selectedPaper);
-                           };
-                           if (metadata.style) {
-                               var oldStyle = document.getElementById('blingStyleJs'),
-                                   parent = oldStyle.parentNode,
-                                   newStyle = document.createElement('script');
-                               newStyle.id = 'blingStyleJs';
-                               newStyle.src = metadata.style;
-                               parent.removeChild(oldStyle);
-                               parent.appendChild(newStyle);
-                           };
-                       });
-        },
-        loadStyleJs : function (input) {
-            var styleJs = document.getElementById('blingStyleJs');
-            styleJs.removeAttribute('src');
-            loadString(input, styleJs, 'innerHTML', function () {
-                eval(document.getElementById('blingStyleJs').innerHTML);
-                delay(function () {convert();},1);
-            });
-        },
-        saveMarkdown : function () {
-            saveString(document.getElementById('markdown').value, 'doc.md');
-        },
-        printPdf : function () {
-            var scrollTop = document.getElementById('preview').scrollTop;
-	    window.print();
-	    document.getElementById('preview').scrollTop = scrollTop;
-        },
         autoConvert : function () {
             delay(function(){convert();}, 500);
-        },
-        setPaper : function (select) {
-            updatePaperStyle(select);
         },
         setCss : function (path) {
             var css = document.getElementById('blingStyleCss');
